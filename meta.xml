@@ -1,0 +1,29 @@
+<meta>
+	<info author="Conner Resources" type="script" name="Framework | https://discord.gg/FZPptaHUAX" />
+	<download_priority_group>9999</download_priority_group>
+
+	<script src="c.lua" type="client" cache="false"/>
+
+	<script src="elements/switch.lua" type="client" cache="false"/>
+	<script src="elements/response.lua" type="client" cache="false"/>
+
+	<file src="files/fonts/Inter-Bold.ttf" type="client"/>
+	<file src="files/fonts/Inter-SemiBold.ttf" type="client"/>
+	<file src="files/fonts/Inter-Medium.ttf" type="client"/>
+	<file src="files/fonts/Inter-Regular.ttf" type="client"/>
+
+	<export function="getFont" type="client" />
+
+	<export function="createSwitch" type="client" />
+	<export function="destroySwitch" type="client" />
+	<export function="showSwitch" type="client" />
+	<export function="hideSwitch" type="client" />
+	<export function="setSwitchVisible" type="client" />
+	<export function="isSwitchSelected" type="client" />
+	<export function="setSwitchSelected" type="client" />
+
+	<export function="setResponseEnabled" type="client" />
+	<export function="isResponseEnabled" type="client" />
+
+	<min_mta_version server="1.6.0"></min_mta_version>
+</meta>
