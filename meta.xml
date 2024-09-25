@@ -5,6 +5,7 @@
 	<script src="c.lua" type="client" cache="false"/>
 
 	<script src="elements/switch.lua" type="client" cache="false"/>
+	<script src="elements/button.lua" type="client" cache="false"/>
 	<script src="elements/response.lua" type="client" cache="false"/>
 
 	<file src="files/fonts/Inter-Bold.ttf" type="client"/>
@@ -21,6 +22,16 @@
 	<export function="setSwitchVisible" type="client" />
 	<export function="isSwitchSelected" type="client" />
 	<export function="setSwitchSelected" type="client" />
+
+	<export function="createButton" type="client" />
+	<export function="destroyButton" type="client" />
+	<export function="setButtonText" type="client" />
+	<export function="getButtonText" type="client" />
+	<export function="showButton" type="client" />
+	<export function="hideButton" type="client" />
+	<export function="setButtonVisible" type="client" />
+	<export function="setButtonX" type="client" />
+	<export function="setButtonY" type="client" />
 
 	<export function="setResponseEnabled" type="client" />
 	<export function="isResponseEnabled" type="client" />

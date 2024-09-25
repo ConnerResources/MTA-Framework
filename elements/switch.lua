@@ -22,13 +22,12 @@ function Switch:constructor(...)
     self.h = arg[4]
     self.selected = arg[5] or false
 
-    local bg = string.format([[
+    local raw = string.format([[
         <svg width="%s" height="%s" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect rx="%s" width="%s" height="%s" fill="#FFFFFF" />
         </svg>
     ]], self.w, self.h, 15, self.w, self.h)
-
-    self.bg = svgCreate(self.w, self.h, bg)
+    self.bg = svgCreate(self.w, self.h, raw)
 
     self.alpha = 1
     self.alphaHover = 0
