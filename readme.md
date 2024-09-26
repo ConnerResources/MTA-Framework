@@ -5,4 +5,5 @@ Toda a estrutuda deste código foi criada em metatable para uma maior flexibilid
 ## Elementos
 Abaixo estão os elementos da framework, em breve novos elementos serão disponibilizados.
 - [Switch](elements/readme.md#switch)
+- [Button](elements/readme.md#button)
 - [Response](elements/readme.md#response)

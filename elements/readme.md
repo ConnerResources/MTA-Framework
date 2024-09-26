@@ -107,7 +107,7 @@ element createButton ( float startX, float startY, float width, float height [, 
 - **colorText:** Uma tabela com o R, G, B, A das cores em que o `text` deve ficar.
 
 ### Returns
-Retorna o `element` do switch se tiver sido criado com sucesso.
+Retorna o `element` do botão se tiver sido criado com sucesso.
 
 
 
