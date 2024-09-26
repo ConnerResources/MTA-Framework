@@ -264,23 +264,23 @@ Retorna `true` se um GUI não estiver aberto, caso contrário, retorna `false`.
 
 
 # Escape
-Este sistema responsivo foi criado com o intuito de bloquear ações de um jogador em quanto ele aguarda a resposta de algum evento, bastante utilizado para comunicações entre server/client.
+Esta função foi criada para verificar se o jogador está fora do jogo.
 
 ## setEscapeOpen
-Aplicar se um GUI está aberto ou não.
+Aplicar se um jogador está fora do jogo ou não.
 ``` lua
 bool setEscapeOpen ( bool opened )
 ```
 ### Argumentos Necessários
-- **opened:** Um booleano que indica se um GUI está aberto (true) ou não (false).
+- **opened:** Um booleano que indica se um jogador está fora do jogo (true) ou não (false).
 
 ### Returns
-Retorna `true` se um GUI estiver aberto, caso contrário, retorna `false`.
+Retorna `true` se o jogador estiver fora do jogo, caso contrário, retorna `false`.
 
 ## isEscapeOpen
-Verificar se o jogador pode abrir outro GUI.
+Verificar se o jogador está fora do jogo.
 ``` lua
 bool isEscapeOpen ( )
 ```
 ### Returns
-Retorna `true` se um GUI não estiver aberto, caso contrário, retorna `false`.
+Retorna `true` se o jogador estiver fora do jogo, caso contrário, retorna `false`.
