@@ -18,6 +18,23 @@ element createSwitch ( float startX, float startY, float width, float height [, 
 ### Returns
 Retorna o `element` do switch se tiver sido criado com sucesso.
 
+### Exemplo Client-side
+```lua
+local sx, sy = guiGetScreenSize()
+local zoom = 1
+local baseX = 1920
+local minZoom = 2
+if sx < baseX then
+    zoom = math.min(minZoom, baseX/sx)
+end
+
+function createSwitchOnCenterScreen()
+    local switch = exports.Framework:createSwitch((sx - 100/zoom)/2, (sy - 50/zoom)/2, 100/zoom, 50/zoom)
+end
+
+createSwitchOnCenterScreen()
+```
+
 ## destroySwitch
 Destroi um switch.
 ``` lua
@@ -114,6 +131,23 @@ element createButton ( float startX, float startY, float width, float height [, 
 
 ### Returns
 Retorna o `element` do botão se tiver sido criado com sucesso.
+
+### Exemplo Client-side
+```lua
+local sx, sy = guiGetScreenSize()
+local zoom = 1
+local baseX = 1920
+local minZoom = 2
+if sx < baseX then
+    zoom = math.min(minZoom, baseX/sx)
+end
+
+function createButtonOnCenterScreen()
+    local button = exports.Framework:createButton((sx - 100/zoom)/2, (sy - 50/zoom)/2, 100/zoom, 50/zoom, "Teste")
+end
+
+createButtonOnCenterScreen()
+```
 
 ## destroyButton
 Destroi um botão.
