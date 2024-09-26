@@ -217,7 +217,7 @@ Retorna `true` se a operação foi bem-sucedida, caso contrário, retorna `false
 
 
 # Response
-Este sistema responsivo foi criado com o intuito de bloquear ações de um jogador em quanto ele aguarda a resposta de algum evento, bastante utilizado para comunicações entre server/client.
+Esta função responsiva foi criado com o intuito de bloquear ações de um jogador em quanto ele aguarda a resposta de algum evento, bastante utilizado para comunicações entre server/client.
 
 ## setResponseEnabled
 Aplicar se está aguardando alguma resposta ou não.
@@ -241,9 +241,46 @@ Retorna `true` se a resposta estiver sendo aguardada, caso contrário, retorna `
 
 
 # Gui
-Este sistema responsivo foi criado com o intuito de bloquear ações de um jogador em quanto ele aguarda a resposta de algum evento, bastante utilizado para comunicações entre server/client.
+Esta função foi feita para identificar se um GUI está aberto.
 
+## setOpenGUI
+Aplicar se um GUI está aberto ou não.
+``` lua
+bool setOpenGUI ( bool opened )
+```
+### Argumentos Necessários
+- **opened:** Um booleano que indica se um GUI está aberto (true) ou não (false).
+
+### Returns
+Retorna `true` se um GUI estiver aberto, caso contrário, retorna `false`.
+
+## canOpenGUI
+Verificar se o jogador pode abrir outro GUI.
+``` lua
+bool canOpenGUI ( )
+```
+### Returns
+Retorna `true` se um GUI não estiver aberto, caso contrário, retorna `false`.
 
 
 # Escape
 Este sistema responsivo foi criado com o intuito de bloquear ações de um jogador em quanto ele aguarda a resposta de algum evento, bastante utilizado para comunicações entre server/client.
+
+## setEscapeOpen
+Aplicar se um GUI está aberto ou não.
+``` lua
+bool setEscapeOpen ( bool opened )
+```
+### Argumentos Necessários
+- **opened:** Um booleano que indica se um GUI está aberto (true) ou não (false).
+
+### Returns
+Retorna `true` se um GUI estiver aberto, caso contrário, retorna `false`.
+
+## canOpenGUI
+Verificar se o jogador pode abrir outro GUI.
+``` lua
+bool canOpenGUI ( )
+```
+### Returns
+Retorna `true` se um GUI não estiver aberto, caso contrário, retorna `false`.
