@@ -8,7 +8,6 @@ end
 
 guiData = {
     fonts = {},
-    svgs = {},
 
     buttonColor = {
         ["gray"] = {
@@ -66,19 +65,6 @@ function createFont(size, family)
     if not family then return false end
     guiData.fonts[string.format("size_%s_%d", family and family or "Inter-Regular", size)] = dxCreateFont(string.format("files/fonts/%s.ttf", family and family or "Inter-Regular"), size, false)
     return guiData.fonts[string.format("size_%s_%d", family and family or "Inter-Regular", size)]
-end
-
-function createSvg(id, w, h, radius)
-    local raw = string.format([[
-        <svg width="%s" height="%s" xmlns="http://www.w3.org/2000/svg">
-        <rect rx="%s" width="%s" height="%s" fill="white" />
-        </svg>
-    ]], w, h, radius, w, h)
-    if id then
-        guiData.svgs[id] = svgCreate(w, h, raw)
-    else
-        return svgCreate(w, h, raw)
-    end
 end
 
 function getButtonColor(color)
