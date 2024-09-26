@@ -7,3 +7,5 @@ Abaixo estão os elementos da framework, em breve novos elementos serão disponi
 - [Switch](elements/readme.md#switch)
 - [Button](elements/readme.md#button)
 - [Response](elements/readme.md#response)
+- [Gui state](elements/readme.md#gui)
+- [Escape](elements/readme.md#escape)

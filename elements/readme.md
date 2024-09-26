@@ -18,19 +18,16 @@ element createSwitch ( float startX, float startY, float width, float height [, 
 ### Returns
 Retorna o `element` do switch se tiver sido criado com sucesso.
 
-
 ## destroySwitch
 Destroi um switch.
 ``` lua
 bool destroySwitch ( table/element switch )
 ```
 ### Argumentos Necessários
-- **switch:** Elemento ou tabela do switch que deseja destruir.
+- **switch:** Tabela ou elemento do switch que deseja destruir.
 
 ### Returns
 Retorna `true` se a operação foi bem-sucedida, caso contrário, retorna `false`.
-
-
 
 ## showSwitch
 Mostrar o switch com animação de surgindo.
@@ -38,7 +35,19 @@ Mostrar o switch com animação de surgindo.
 bool showSwitch ( table/element switch [, float actionTime = 500, string easing = "OutQuad" ] )
 ```
 ### Argumentos Necessários
-- **switch:** Elemento ou tabela do switch que deseja mostar.
+- **switch:** Tabela ou elemento do switch que deseja mostar.
+
+### Argumentos Opcionais
+- **actionTime:** Um número em milissegundo para a animação ser concluída.
+- **easing:** A [função de easing](https://wiki.multitheftauto.com/wiki/Easing) a ser usada para a animação.
+
+## hideSwitch
+Ocultar o switch com animação de sumindo.
+``` lua
+bool hideSwitch ( table/element switch [, float actionTime = 500, string easing = "OutQuad" ] )
+```
+### Argumentos Necessários
+- **switch:** Tabela ou elemento do switch que deseja mostar.
 
 ### Argumentos Opcionais
 - **actionTime:** Um número em milissegundo para a animação ser concluída.
@@ -47,19 +56,17 @@ bool showSwitch ( table/element switch [, float actionTime = 500, string easing 
 ### Returns
 Retorna `true` se a operação foi bem-sucedida, caso contrário, retorna `false`.
 
-
 ## setSwitchVisible
 Aletrar a exibição do switch sem animação.
 ``` lua
 bool setSwitchVisible ( table/element switch, bool isVisible)
 ```
 ### Argumentos Necessários
-- **switch:** Elemento ou tabela do switch que deseja destruir.
+- **switch:** Tabela ou elemento do switch que deseja destruir.
 - **isVisible:** Um booleano que indica se queremos mostrar (true) ou escondê-lo (false).
 
 ### Returns
 Retorna `true` se a operação foi bem-sucedida, caso contrário, retorna `false`.
-
 
 ## isSwitchSelected
 Verifica se o switch está ligado ou desligado.
@@ -71,7 +78,6 @@ bool isSwitchSelected ( element switch )
 
 ### Returns
 Retorna `true` se o switch estiver ligado, caso contrário, retorna `false`.
-
 
 ## setSwitchSelected
 Verifica se o switch está ligado ou desligado.
@@ -109,6 +115,105 @@ element createButton ( float startX, float startY, float width, float height [, 
 ### Returns
 Retorna o `element` do botão se tiver sido criado com sucesso.
 
+## destroyButton
+Destroi um botão.
+``` lua
+bool destroyButton ( table/element button )
+```
+### Argumentos Necessários
+- **button:** Tabela ou elemento do button que deseja destruir.
+
+### Returns
+Retorna `true` se a operação foi bem-sucedida, caso contrário, retorna `false`.
+
+## setButtonText
+Altera o texto que fica em cima do botão.
+``` lua
+bool setButtonText ( table/element button, string text )
+```
+### Argumentos Necessários
+- **button:** Tabela ou elemento do button que deseja destruir.
+- **text:** Uma string com o novo nome que vai ficar em cima do botão.
+
+### Returns
+Retorna `true` se a operação foi bem-sucedida, caso contrário, retorna `false`.
+
+## getButtonText
+Altera o texto que fica em cima do botão.
+``` lua
+bool getButtonText ( table/element button )
+```
+### Argumentos Necessários
+- **button:** Tabela ou elemento do button que deseja destruir.
+
+### Returns
+Retorna uma `string` com o texto atual do botão.
+
+## setButtonVisible
+Aletrar a exibição do switch sem animação.
+``` lua
+bool setButtonVisible ( table/element button, bool isVisible)
+```
+### Argumentos Necessários
+- **button:** Tabela ou elemento do botão que deseja destruir.
+- **isVisible:** Um booleano que indica se queremos mostrar (true) ou escondê-lo (false).
+
+### Returns
+Retorna `true` se a operação foi bem-sucedida, caso contrário, retorna `false`.
+
+## showButton
+Mostrar o botão com animação de surgindo.
+``` lua
+bool showButton ( table/element button [, float actionTime = 500, string easing = "OutQuad" ] )
+```
+### Argumentos Necessários
+- **button:** Tabela ou elemento do botão que deseja mostar.
+
+### Argumentos Opcionais
+- **actionTime:** Um número em milissegundo para a animação ser concluída.
+- **easing:** A [função de easing](https://wiki.multitheftauto.com/wiki/Easing) a ser usada para a animação.
+
+### Returns
+Retorna `true` se a operação foi bem-sucedida, caso contrário, retorna `false`.
+
+## hideButton
+Ocultar o botão com animação de sumindo.
+``` lua
+bool hideButton ( table/element button [, float actionTime = 500, string easing = "OutQuad" ] )
+```
+### Argumentos Necessários
+- **button:** Tabela ou elemento do botão que deseja mostar.
+
+### Argumentos Opcionais
+- **actionTime:** Um número em milissegundo para a animação ser concluída.
+- **easing:** A [função de easing](https://wiki.multitheftauto.com/wiki/Easing) a ser usada para a animação.
+
+### Returns
+Retorna `true` se a operação foi bem-sucedida, caso contrário, retorna `false`.
+
+## setButtonX
+Aletrar a posição horizontal de um botão.
+``` lua
+bool setButtonX ( table/element button, float startX)
+```
+### Argumentos Necessários
+- **button:** Tabela ou elemento do botão que deseja destruir.
+- **startX:** Um ponto flutuante que representa a posição absoluta da origem X do retângulo, representado por pixels na tela.
+
+### Returns
+Retorna `true` se a operação foi bem-sucedida, caso contrário, retorna `false`.
+
+## setButtonY
+Aletrar a posição vertical de um botão.
+``` lua
+bool setButtonX ( table/element button, float startY)
+```
+### Argumentos Necessários
+- **button:** Tabela ou elemento do botão que deseja destruir.
+- **startY:** Um ponto flutuante que representa a posição absoluta da origem X do retângulo, representado por pixels na tela.
+
+### Returns
+Retorna `true` se a operação foi bem-sucedida, caso contrário, retorna `false`.
 
 
 # Response
@@ -125,12 +230,20 @@ bool setResponseEnabled ( bool response )
 ### Returns
 Retorna `true` se a resposta estiver sendo aguardada, caso contrário, retorna `false`.
 
-
 ## isResponseEnabled
 Verificar se está aguardando alguma resposta.
 ``` lua
 bool isResponseEnabled ( )
 ```
-
 ### Returns
 Retorna `true` se a resposta estiver sendo aguardada, caso contrário, retorna `false`.
+
+
+
+# Gui
+Este sistema responsivo foi criado com o intuito de bloquear ações de um jogador em quanto ele aguarda a resposta de algum evento, bastante utilizado para comunicações entre server/client.
+
+
+
+# Escape
+Este sistema responsivo foi criado com o intuito de bloquear ações de um jogador em quanto ele aguarda a resposta de algum evento, bastante utilizado para comunicações entre server/client.
