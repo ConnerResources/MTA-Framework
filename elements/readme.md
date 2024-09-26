@@ -277,10 +277,10 @@ bool setEscapeOpen ( bool opened )
 ### Returns
 Retorna `true` se um GUI estiver aberto, caso contrário, retorna `false`.
 
-## canOpenGUI
+## isEscapeOpen
 Verificar se o jogador pode abrir outro GUI.
 ``` lua
-bool canOpenGUI ( )
+bool isEscapeOpen ( )
 ```
 ### Returns
 Retorna `true` se um GUI não estiver aberto, caso contrário, retorna `false`.
