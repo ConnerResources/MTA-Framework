@@ -13,7 +13,7 @@ element createSwitch ( float startX, float startY, float width, float height [, 
 - **height:** Um flutuador que representa a altura do retângulo, desenhado para baixo a partir da origem.
 
 ### Argumentos Opcionais
-- **selected:** Se o switch já vai ser criado selecionado(ligado).
+- **selected:** Um booleano que indica se o switch já vai ser criado selecionado(ligado).
 
 ### Returns
 Retorna o `element` do switch se tiver sido criado com sucesso.
@@ -40,7 +40,7 @@ bool showSwitch ( table/element switch [, float actionTime = 500, string easing 
 - **switch:** Elemento ou tabela do switch que deseja mostar.
 
 ### Argumentos Opcionais
-- **actionTime:** Tempo em milissegundo para a animação ser concluída.
+- **actionTime:** Um número em milissegundo para a animação ser concluída.
 - **easing:** A [função de easing](https://wiki.multitheftauto.com/wiki/Easing) a ser usada para a animação.
 
 ### Returns
@@ -108,3 +108,26 @@ bool isResponseEnabled ( )
 
 ### Returns
 Retorna `true` se a resposta estiver sendo aguardada, caso contrário, retorna `false`.
+
+
+# Button
+Este switch ao ser criado vai ser posicionado na tela do client e ao ser clicado será executado uma animação no mesmo de "liga e desliga", você consegue verificar e aplicar o status de ligado/desligado além de outras funções.
+
+## createButton
+Criar um botão.
+``` lua
+element createButton ( float startX, float startY, float width, float height [, string text = "", string color = "gray", table colorText = {255, 255, 255, 255} ] )
+```
+### Argumentos Necessários
+- **startX:** Um ponto flutuante que representa a posição absoluta da origem X do retângulo, representado por pixels na tela.
+- **startY:** Um ponto flutuante que representa a posição Y de origem absoluta do retângulo, representado por pixels na tela.
+- **width:** Um ponto flutuante que representa a largura do retângulo, desenhado na direção certa a partir da origem.
+- **height:** Um flutuador que representa a altura do retângulo, desenhado para baixo a partir da origem.
+
+### Argumentos Opcionais
+- **text:** Se o switch já vai ser criado selecionado(ligado).
+- **text:** Se o switch já vai ser criado selecionado(ligado).
+- **text:** Se o switch já vai ser criado selecionado(ligado).
+
+### Returns
+Retorna o `element` do switch se tiver sido criado com sucesso.
