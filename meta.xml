@@ -13,6 +13,8 @@
 	<file src="files/fonts/Inter-Medium.ttf" type="client"/>
 	<file src="files/fonts/Inter-Regular.ttf" type="client"/>
 
+	<file src="files/images/switch_circle.png" type="client"/>
+
 	<export function="getFont" type="client" />
 
 	<export function="createSwitch" type="client" />
@@ -35,6 +37,12 @@
 
 	<export function="setResponseEnabled" type="client" />
 	<export function="isResponseEnabled" type="client" />
+
+	<export function="setOpenGUI" type="client" />
+	<export function="canOpenGUI" type="client" />
+
+	<export function="isEscapeOpen" type="client" />
+	<export function="setEscapeOpen" type="client" />
 
 	<min_mta_version server="1.6.0"></min_mta_version>
 </meta>

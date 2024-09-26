@@ -198,11 +198,10 @@ function Button:click(state)
     else
         if self.clicked then
         self.colorDark = self.defDark
-        if isMouseInPosition(self.x, self.y, self.w, self.h) and not isResponseEnabled() and not isEscapeOpen() then
-            triggerEvent("guiButtonClick", root, self.element)
+            if isMouseInPosition(self.x, self.y, self.w, self.h) and not isResponseEnabled() and not isEscapeOpen() then
+                triggerEvent("guiButtonClick", root, self.element)
+            end
         end
-        end
-
         self.clicked = nil
     end
 end
