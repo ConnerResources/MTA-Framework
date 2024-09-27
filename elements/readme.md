@@ -11,7 +11,7 @@ element createSwitch ( float startX, float startY, float width, float height [, 
 - **startY:** An float representing the absolute origin Y position of the rectangle, represented by pixels on the screen.
 - **width:** An float representing the width of the rectangle, drawn in a right direction from the origin.
 - **height:** An float representing the height of the rectangle, drawn in a downwards direction from the origin.
-- 
+
 ### Optional Arguments
 - **selected:** A boolean that indicates whether the switch will be created as selected (on).
 
@@ -27,7 +27,7 @@ local minZoom = 2
 if sx < baseX then
     zoom = math.min(minZoom, baseX/sx)
 end
-,
+
 function createSwitchOnCenterScreen()
     local switch = exports.Framework:createSwitch((sx - 100/zoom)/2, (sy - 50/zoom)/2, 100/zoom, 50/zoom)
 end
