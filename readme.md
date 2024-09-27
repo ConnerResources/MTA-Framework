@@ -1,8 +1,8 @@
-# Framework Multi Theft Auto
-Esta framework foi criada para facilitar a criação de interfaces dentro do Multi Theft Auto(MTA) para desenvolvedores, toda a estrutuda deste código foi criada em metatable para uma maior flexibilidade do mesmo, com foco em eficiência utilizamos svg no lugar de dxDrawRectangle, dxDrawCircle e entre outras funções nativas para melhor fluidez do código, nesta framework contém **[os elementos](elements)** que estão em constate atualizações caso tenha alguma dúvida ou sugestão contate-me no discord #euconner ou no e-mail connerresources@gmail.com.
+# Multi Theft Auto Framework
+This framework was created to facilitate the creation of interfaces within Multi Theft Auto (MTA) for developers. The entire structure of this code was built using metatables for greater flexibility. With a focus on efficiency, we use SVG instead of dxDrawRectangle, dxDrawCircle, and other native functions to improve the code's performance. This framework includes **[the elements](elements)**, which are constantly being updated. If you have any questions or suggestions, feel free to contact me on Discord at #euconner or via email at connerresources@gmail.com.
 
-## Elementos
-Abaixo estão os elementos da framework, em breve novos elementos serão disponibilizados.
+## Elements
+Below are the elements of the framework. New elements will be made available soon:
 - [Switch](elements/readme.md#switch)
 - [Button](elements/readme.md#button)
 - [Response](elements/readme.md#response)
