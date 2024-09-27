@@ -256,14 +256,7 @@ function setButtonText(...)
 end
 
 function getButtonText(...)
-    if type(arg[1]) == "table" then
-        for _, v in pairs(arg[1]) do
-        createdButtons[v]:getText(arg[2])
-        end
-    else
-        createdButtons[arg[1]]:getText(arg[2])
-    end
-    return true
+    return createdButtons[arg[1]]:getText(arg[2])
 end
 
 function setButtonX(...)
