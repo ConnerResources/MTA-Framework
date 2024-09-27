@@ -1,24 +1,24 @@
 # Switch
-Este switch ao ser criado vai ser posicionado na tela do cliente e ao ser clicado será executado uma animação no mesmo de "liga e desliga", você consegue verificar e aplicar o status de ligado/desligado além de outras funções.
+This switch, when created, will be positioned on the client's screen, and when clicked, it will trigger an "on and off" animation. You can check and apply the on/off status, as well as other functions.
 
 ## createSwitch
-Criar um switch.
+Create a switch.
 ``` lua
 element createSwitch ( float startX, float startY, float width, float height [, bool selected = false ] )
 ```
-### Argumentos Necessários
-- **startX:** Um ponto flutuante que representa a posição absoluta da origem X do retângulo, representado por pixels na tela.
-- **startY:** Um ponto flutuante que representa a posição Y de origem absoluta do retângulo, representado por pixels na tela.
-- **width:** Um ponto flutuante que representa a largura do retângulo, desenhado na direção certa a partir da origem.
-- **height:** Um flutuador que representa a altura do retângulo, desenhado para baixo a partir da origem.
-
-### Argumentos Opcionais
-- **selected:** Um booleano que indica se o switch já vai ser criado selecionado(ligado).
+### Required Arguments
+- **startX:** An float representing the absolute origin X position of the rectangle, represented by pixels on the screen.
+- **startY:** An float representing the absolute origin Y position of the rectangle, represented by pixels on the screen.
+- **width:** An float representing the width of the rectangle, drawn in a right direction from the origin.
+- **height:** An float representing the height of the rectangle, drawn in a downwards direction from the origin.
+- 
+### Optional Arguments
+- **selected:** A boolean that indicates whether the switch will be created as selected (on).
 
 ### Returns
-Retorna o `element` do switch se tiver sido criado com sucesso.
+Returns the `switch` element if it was successfully created.
 
-### Exemplo Client-side
+### Client-side example
 ```lua
 local sx, sy = guiGetScreenSize()
 local zoom = 1
