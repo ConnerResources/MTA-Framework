@@ -312,7 +312,7 @@ bool setEscapeOpen ( bool opened )
 Returns `true` if the player is out of the game, otherwise returns `false`.
 
 ## isEscapeOpen
-Verificar se o jogador está fora do jogo.
+Check if the player is out of the game.
 ``` lua
 bool isEscapeOpen ( )
 ```
