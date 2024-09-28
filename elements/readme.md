@@ -132,7 +132,7 @@ element createButton ( float startX, float startY, float width, float height [, 
 ### Returns
 Returns the button `element` if it was successfully created.
 
-### Exemplo Client-side
+### Client-side example
 ```lua
 local sx, sy = guiGetScreenSize()
 local zoom = 1
