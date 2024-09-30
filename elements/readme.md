@@ -132,7 +132,7 @@ element createButton ( float startX, float startY, float width, float height [, 
 **Returns**
 Returns the button `element` if it was successfully created.
 
-### Client-side example
+**Client-side example**
 ```lua
 local sx, sy = guiGetScreenSize()
 local zoom = 1
@@ -300,7 +300,7 @@ Returns `true` if a GUI is not open, otherwise returns `false`.
 # Escape
 This function was created to check if the player is out of the game.
 
-## setEscapeOpen
+### setEscapeOpen
 Apply whether a player is out of the game or not.
 ``` lua
 bool setEscapeOpen ( bool opened )
