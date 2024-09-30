@@ -7,7 +7,7 @@ This framework was created to facilitate the creation of interfaces within Multi
 3. Move the unzipped resource to the `resources` folder inside your server.
 
 ## Elements
-Below are the elements of the framework. New elements will be made available soon:
+Below are the framework elements and syntaxes. New elements will be available soon:
 - [Switch](elements/readme.md#switch)
 - [Button](elements/readme.md#button)
 - [Response](elements/readme.md#response)
