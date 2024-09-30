@@ -1,7 +1,7 @@
 # Switch
 This switch, when created, will be positioned on the client's screen, and when clicked, it will trigger an "on and off" animation. You can check and apply the on/off status, as well as other functions.
 
-## createSwitch
+### createSwitch
 Create a switch.
 ``` lua
 element createSwitch ( float startX, float startY, float width, float height [, bool selected = false ] )
@@ -35,7 +35,7 @@ end
 createSwitchOnCenterScreen()
 ```
 
-## destroySwitch
+### destroySwitch
 Destroys a switch.
 ``` lua
 bool destroySwitch ( table/element switch )
@@ -46,7 +46,7 @@ bool destroySwitch ( table/element switch )
 **Returns**
 Returns `true` if the operation was successful, otherwise returns `false`.
 
-## showSwitch
+### showSwitch
 Show switch with pop-up animation.
 ``` lua
 bool showSwitch ( table/element switch [, float actionTime = 500, string easing = "OutQuad" ] )
@@ -58,7 +58,7 @@ bool showSwitch ( table/element switch [, float actionTime = 500, string easing 
 - **actionTime:** A number of milliseconds for the animation to complete.
 - **easing:** The [easing function](https://wiki.multitheftauto.com/wiki/Easing) to use for the interpolation.
 
-## hideSwitch
+### hideSwitch
 Hide switch with fading animation.
 ``` lua
 bool hideSwitch ( table/element switch [, float actionTime = 500, string easing = "OutQuad" ] )
@@ -73,7 +73,7 @@ bool hideSwitch ( table/element switch [, float actionTime = 500, string easing 
 **Returns**
 Returns `true` if the operation was successful, otherwise returns `false`.
 
-## setSwitchVisible
+### setSwitchVisible
 Change switch display without animation.
 ``` lua
 bool setSwitchVisible ( table/element switch, bool isVisible)
@@ -85,7 +85,7 @@ bool setSwitchVisible ( table/element switch, bool isVisible)
 **Returns**
 Returns `true` if the operation was successful, otherwise returns `false`.
 
-## isSwitchSelected
+### isSwitchSelected
 Checks whether the switch is on or off.
 ``` lua
 bool isSwitchSelected ( element switch )
@@ -96,7 +96,7 @@ bool isSwitchSelected ( element switch )
 **Returns**
 Returns `true` if the switch is on, otherwise returns `false`.
 
-## setSwitchSelected
+### setSwitchSelected
 Sets the switch to on or off status.
 ``` lua
 bool setSwitchSelected ( element switch, bool selected )
@@ -113,7 +113,7 @@ Returns `true` if the operation was successful, otherwise returns `false`.
 # Button
 This button, when created, will be positioned on the customer's screen and when clicked, an animation will be executed on the "selected" button.
 
-## createButton
+### createButton
 Create a button.
 ``` lua
 element createButton ( float startX, float startY, float width, float height [, string text = "", string color = "gray", table colorText = {255, 255, 255, 255} ] )
@@ -149,7 +149,7 @@ end
 createButtonOnCenterScreen()
 ```
 
-## destroyButton
+### destroyButton
 Destroys a button.
 ``` lua
 bool destroyButton ( table/element button )
@@ -160,7 +160,7 @@ bool destroyButton ( table/element button )
 **Returns**
 Returns `true` if the operation was successful, otherwise returns `false`.
 
-## setButtonText
+### setButtonText
 Changes the text above the button.
 ``` lua
 bool setButtonText ( table/element button, string text )
@@ -172,7 +172,7 @@ bool setButtonText ( table/element button, string text )
 **Returns**
 Returns `true` if the operation was successful, otherwise returns `false`.
 
-## getButtonText
+### getButtonText
 Get the text that sits above the button.
 ``` lua
 bool getButtonText ( element button )
@@ -183,7 +183,7 @@ bool getButtonText ( element button )
 **Returns**
 Returns a `string` with the current text of the button.
 
-## setButtonVisible
+### setButtonVisible
 Change the display of the button without animation.
 ``` lua
 bool setButtonVisible ( table/element button, bool isVisible)
@@ -195,7 +195,7 @@ bool setButtonVisible ( table/element button, bool isVisible)
 **Returns**
 Returns `true` if the operation was successful, otherwise returns `false`.
 
-## showButton
+### showButton
 Show button with pop-up animation.
 ``` lua
 bool showButton ( table/element button [, float actionTime = 500, string easing = "OutQuad" ] )
@@ -210,7 +210,7 @@ bool showButton ( table/element button [, float actionTime = 500, string easing 
 **Returns**
 Returns `true` if the operation was successful, otherwise returns `false`.
 
-## hideButton
+### hideButton
 Hide button with fading animation.
 ``` lua
 bool hideButton ( table/element button [, float actionTime = 500, string easing = "OutQuad" ] )
@@ -225,7 +225,7 @@ bool hideButton ( table/element button [, float actionTime = 500, string easing 
 **Returns**
 Returns `true` if the operation was successful, otherwise returns `false`.
 
-## setButtonX
+### setButtonX
 Change the horizontal position of a button.
 ``` lua
 bool setButtonX ( table/element button, float startX)
@@ -237,7 +237,7 @@ bool setButtonX ( table/element button, float startX)
 **Returns**
 Returns `true` if the operation was successful, otherwise returns `false`.
 
-## setButtonY
+### setButtonY
 Change the vertical position of a button.
 ``` lua
 bool setButtonX ( table/element button, float startY)
@@ -253,7 +253,7 @@ Returns `true` if the operation was successful, otherwise returns `false`.
 # Response
 This responsive function was created with the intention of blocking a player's actions while he waits for a response to an event, widely used for server/client communications.
 
-## setResponseEnabled
+### setResponseEnabled
 Apply whether you are waiting for any response or not.
 ``` lua
 bool setResponseEnabled ( bool response )
@@ -264,7 +264,7 @@ bool setResponseEnabled ( bool response )
 **Returns**
 Returns `true` if the response is being awaited, otherwise returns `false`.
 
-## isResponseEnabled
+### isResponseEnabled
 Check if you are waiting for a response.
 ``` lua
 bool isResponseEnabled ( )
@@ -277,7 +277,7 @@ Returns `true` if the response is being awaited, otherwise returns `false`.
 # Gui
 This function was made to identify if a GUI is open.
 
-## setOpenGUI
+### setOpenGUI
 Enforce whether a GUI is open or not.
 ``` lua
 bool setOpenGUI ( bool opened )
@@ -288,7 +288,7 @@ bool setOpenGUI ( bool opened )
 **Returns**
 Returns `true` if a GUI is open, otherwise returns `false`.
 
-## canOpenGUI
+### canOpenGUI
 Check if the player can open another GUI.
 ``` lua
 bool canOpenGUI ( )
@@ -311,7 +311,7 @@ bool setEscapeOpen ( bool opened )
 **Returns**
 Returns `true` if the player is out of the game, otherwise returns `false`.
 
-## isEscapeOpen
+### isEscapeOpen
 Check if the player is out of the game.
 ``` lua
 bool isEscapeOpen ( )
