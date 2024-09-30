@@ -5,6 +5,7 @@ This framework was created to facilitate the creation of interfaces within Multi
 1. First download the resource, click on `Code` then `Download ZIP`.
 2. Unpack the resource.
 3. Move the unzipped resource to the `resources` folder inside your server.
+4. See the syntaxes of the [elements](#elements) below to learn how to use them.
 
 ## Elements
 Below are the framework elements and syntaxes. New elements will be available soon:
