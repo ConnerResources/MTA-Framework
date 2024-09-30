@@ -15,7 +15,7 @@ element createSwitch ( float startX, float startY, float width, float height [, 
 **Optional Arguments**
 - **selected:** A boolean that indicates whether the switch will be created as selected (on).
 
-**Returns**
+**Returns:**
 Returns the switch `element` if it was successfully created.
 
 **Client-side example**
@@ -43,7 +43,7 @@ bool destroySwitch ( table/element switch )
 **Required Arguments**
 - **switch:** Switch table or element you want to destroy.
 
-**Returns**
+**Returns:**
 Returns `true` if the operation was successful, otherwise returns `false`.
 
 ### showSwitch
@@ -70,7 +70,7 @@ bool hideSwitch ( table/element switch [, float actionTime = 500, string easing 
 - **actionTime:** A number of milliseconds for the animation to complete.
 - **easing:** The [easing function](https://wiki.multitheftauto.com/wiki/Easing) to use for the interpolation.
 
-**Returns**
+**Returns:**
 Returns `true` if the operation was successful, otherwise returns `false`.
 
 ### setSwitchVisible
@@ -82,7 +82,7 @@ bool setSwitchVisible ( table/element switch, bool isVisible)
 - **switch:** Table or switch element you want to destroy.
 - **isVisible:** A boolean indicating whether we want to show (true) or hide it (false).
 
-**Returns**
+**Returns:**
 Returns `true` if the operation was successful, otherwise returns `false`.
 
 ### isSwitchSelected
@@ -93,7 +93,7 @@ bool isSwitchSelected ( element switch )
 **Required Arguments**
 - **switch:** Switch element you want to check the status of.
 
-**Returns**
+**Returns:**
 Returns `true` if the switch is on, otherwise returns `false`.
 
 ### setSwitchSelected
@@ -105,7 +105,7 @@ bool setSwitchSelected ( element switch, bool selected )
 - **switch:** Switch element you want to apply the status to.
 - **selected:** A boolean that indicates whether we want to turn it on (true) or off (false).
 
-**Returns**
+**Returns:**
 Returns `true` if the operation was successful, otherwise returns `false`.
 
 
@@ -129,7 +129,7 @@ element createButton ( float startX, float startY, float width, float height [, 
 - **color:** A string with the button's color. Default colors: (grey) and (green).
 - **colorText:** A table with the R, G, B, A values for the colors in which the `text` should appear.
 
-**Returns**
+**Returns:**
 Returns the button `element` if it was successfully created.
 
 **Client-side example**
@@ -157,7 +157,7 @@ bool destroyButton ( table/element button )
 **Required Arguments**
 - **button:** Table or button element you want to destroy.
 
-**Returns**
+**Returns:**
 Returns `true` if the operation was successful, otherwise returns `false`.
 
 ### setButtonText
@@ -169,7 +169,7 @@ bool setButtonText ( table/element button, string text )
 - **button:** Table or button element you want to change the text of.
 - **text:** A string with the new name that will appear above the button.
 
-**Returns**
+**Returns:**
 Returns `true` if the operation was successful, otherwise returns `false`.
 
 ### getButtonText
@@ -180,7 +180,7 @@ bool getButtonText ( element button )
 **Required Arguments**
 - **button:** Button element you want to get the text from.
 
-**Returns**
+**Returns:**
 Returns a `string` with the current text of the button.
 
 ### setButtonVisible
@@ -192,7 +192,7 @@ bool setButtonVisible ( table/element button, bool isVisible)
 - **button:** Table or button element you want to apply visibility to.
 - **isVisible:** A boolean indicating whether we want to show (true) or hide it (false).
 
-**Returns**
+**Returns:**
 Returns `true` if the operation was successful, otherwise returns `false`.
 
 ### showButton
@@ -207,7 +207,7 @@ bool showButton ( table/element button [, float actionTime = 500, string easing 
 - **actionTime:** A number of milliseconds for the animation to complete.
 - **easing:** The [easing function](https://wiki.multitheftauto.com/wiki/Easing) to use for the interpolation.
 
-**Returns**
+**Returns:**
 Returns `true` if the operation was successful, otherwise returns `false`.
 
 ### hideButton
@@ -222,7 +222,7 @@ bool hideButton ( table/element button [, float actionTime = 500, string easing 
 - **actionTime:** A number of milliseconds for the animation to complete.
 - **easing:** The [easing function](https://wiki.multitheftauto.com/wiki/Easing) to use for the interpolation.
 
-**Returns**
+**Returns:**
 Returns `true` if the operation was successful, otherwise returns `false`.
 
 ### setButtonX
@@ -234,7 +234,7 @@ bool setButtonX ( table/element button, float startX)
 - **button:** Table or button element that changes position.
 - **startX:** An float representing the absolute origin X position of the rectangle, represented by pixels on the screen.
 
-**Returns**
+**Returns:**
 Returns `true` if the operation was successful, otherwise returns `false`.
 
 ### setButtonY
@@ -246,7 +246,7 @@ bool setButtonX ( table/element button, float startY)
 - **button:** Table or button element that changes position.
 - **startY:** An float representing the absolute origin Y position of the rectangle, represented by pixels on the screen.
 
-**Returns**
+**Returns:**
 Returns `true` if the operation was successful, otherwise returns `false`.
 
 
@@ -261,7 +261,7 @@ bool setResponseEnabled ( bool response )
 **Required Arguments**
 - **response:** A boolean indicating whether we want to leave it waiting for a response (true) or close it (false).
 
-**Returns**
+**Returns:**
 Returns `true` if the response is being awaited, otherwise returns `false`.
 
 ### isResponseEnabled
@@ -269,7 +269,7 @@ Check if you are waiting for a response.
 ``` lua
 bool isResponseEnabled ( )
 ```
-**Returns**
+**Returns:**
 Returns `true` if the response is being awaited, otherwise returns `false`.
 
 
@@ -285,7 +285,7 @@ bool setOpenGUI ( bool opened )
 **Required Arguments**
 - **opened:** A boolean indicating whether a GUI is open (true) or not (false).
 
-**Returns**
+**Returns:**
 Returns `true` if a GUI is open, otherwise returns `false`.
 
 ### canOpenGUI
@@ -293,7 +293,7 @@ Check if the player can open another GUI.
 ``` lua
 bool canOpenGUI ( )
 ```
-**Returns**
+**Returns:**
 Returns `true` if a GUI is not open, otherwise returns `false`.
 
 
@@ -308,7 +308,7 @@ bool setEscapeOpen ( bool opened )
 **Required Arguments**
 - **opened:** A boolean indicating whether a player is out of the game (true) or not (false).
 
-**Returns**
+**Returns:**
 Returns `true` if the player is out of the game, otherwise returns `false`.
 
 ### isEscapeOpen
@@ -316,5 +316,5 @@ Check if the player is out of the game.
 ``` lua
 bool isEscapeOpen ( )
 ```
-**Returns**
+**Returns:**
 Returns `true` if the player is out of the game, otherwise returns `false`.
