@@ -8,3 +8,4 @@ Below are the elements of the framework. New elements will be made available soo
 - [Response](elements/readme.md#response)
 - [Gui state](elements/readme.md#gui)
 - [Escape](elements/readme.md#escape)
+- [Fonts](elements/readme.md#fonts)
