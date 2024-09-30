@@ -318,3 +318,20 @@ bool isEscapeOpen ( )
 ```
 **Returns:**
 Returns `true` if the player is out of the game, otherwise returns `false`.
+
+# Fonts
+Creating fonts in an optimized way.
+
+### getFont
+Gets a source within the framework if already created, otherwise a new one will be created. This way, fonts created within the framework will never be repeated if they have the same size and the same family.
+``` lua
+element getFont ( float size [, string family = "Inter-Regular"] )
+```
+**Required Arguments**
+- **size:** A number indicating the font size.
+
+**Optional Arguments**
+- **family:** A string with the font family. Standard families: (Inter-Bold), (Inter-Medium), (Inter-Regular) and (Inter-SemiBold).
+
+**Returns:**
+Returns the `element` of the source if it was created successfully, otherwise it will return `false`.
