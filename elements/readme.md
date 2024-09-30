@@ -319,7 +319,7 @@ bool isEscapeOpen ( )
 **Returns:**
 Returns `true` if the player is out of the game, otherwise returns `false`.
 
-# Fonts
+# Font
 Creating fonts in an optimized way.
 
 ### getFont
