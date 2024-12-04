@@ -84,5 +84,11 @@ function removeStoppedResourceElements(res)
             v:destroy()
         end
     end
+
+    for i, v in pairs(createdSlides) do
+        if v:getOwner() == owner then
+            v:destroy()
+        end
+    end
 end
 addEventHandler("onClientResourceStop", root, removeStoppedResourceElements)

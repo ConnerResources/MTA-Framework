@@ -34,7 +34,7 @@ function Switch:constructor(...)
     self.clickProgress = self.selected and 1 or 0
     self.visible = true
     self.element = createElement("dx-switch")
-    return true
+    return self.element
 end
 
 function Switch:destroy(...)
@@ -207,7 +207,7 @@ end
 function destroySwitch(...)
     if type(arg[1]) == "table" then
         for _, v in pairs(arg[1]) do
-        createdSwitches[v]:destroy(arg[2])
+            createdSwitches[v]:destroy(arg[2])
         end
     else
         createdSwitches[arg[1]]:destroy(arg[2])
@@ -218,7 +218,7 @@ end
 function setSwitchVisible(...)
     if type(arg[1]) == "table" then
         for _, v in pairs(arg[1]) do
-        createdSwitches[v]:setVisible(arg[2])
+            createdSwitches[v]:setVisible(arg[2])
         end
     else
         createdSwitches[arg[1]]:setVisible(arg[2])
@@ -229,7 +229,7 @@ end
 function showSwitch(...)
     if type(arg[1]) == "table" then
         for _, v in pairs(arg[1]) do
-        createdSwitches[v]:show(arg[2], arg[3])
+            createdSwitches[v]:show(arg[2], arg[3])
         end
     else
         createdSwitches[arg[1]]:show(arg[2], arg[3])
@@ -240,7 +240,7 @@ end
 function hideSwitch(...)
     if type(arg[1]) == "table" then
         for _, v in pairs(arg[1]) do
-        createdSwitches[v]:hide(arg[2], arg[3])
+            createdSwitches[v]:hide(arg[2], arg[3])
         end
     else
         createdSwitches[arg[1]]:hide(arg[2], arg[3])
@@ -255,7 +255,7 @@ end
 function setSwitchSelected(...)
     if type(arg[1]) == "table" then
         for _, v in pairs(arg[1]) do
-        createdSwitches[v]:setSelected(arg[2])
+            createdSwitches[v]:setSelected(arg[2])
         end
     else
         createdSwitches[arg[1]]:setSelected(arg[2])
@@ -273,7 +273,7 @@ addEventHandler("onClientRender", root, renderSwitches)
 function clickSwitches(btn, state)
     if btn == "left" and state == "down" then
         for i, v in pairs(createdSwitches) do
-        v:click()
+            v:click()
         end
     end
 end

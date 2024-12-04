@@ -44,7 +44,7 @@ function Button:constructor(...)
     self.defDark = self.colorDark
     self.defRed = self.colorRed
     self.clickable = true
-    return true
+    return self.element
 end
 
 function Button:destroy()
@@ -236,7 +236,7 @@ end
 function destroyButton(...)
     if type(arg[1]) == "table" then
         for _, v in pairs(arg[1]) do
-        createdButtons[v]:destroy()
+            createdButtons[v]:destroy()
         end
     else
         createdButtons[arg[1]]:destroy()
@@ -247,7 +247,7 @@ end
 function setButtonText(...)
     if type(arg[1]) == "table" then
         for _, v in pairs(arg[1]) do
-        createdButtons[v]:setText(arg[2])
+            createdButtons[v]:setText(arg[2])
         end
     else
         createdButtons[arg[1]]:setText(arg[2])
@@ -262,7 +262,7 @@ end
 function setButtonX(...)
     if type(arg[1]) == "table" then
         for _, v in pairs(arg[1]) do
-        createdButtons[v]:setX(arg[2])
+            createdButtons[v]:setX(arg[2])
         end
     else
         createdButtons[arg[1]]:setX(arg[2])
@@ -273,7 +273,7 @@ end
 function setButtonY(...)
     if type(arg[1]) == "table" then
         for _, v in pairs(arg[1]) do
-        createdButtons[v]:setY(arg[2])
+            createdButtons[v]:setY(arg[2])
         end
     else
         createdButtons[arg[1]]:setY(arg[2])
@@ -295,7 +295,7 @@ end
 function hideButton(...)
     if type(arg[1]) == "table" then
         for _, v in pairs(arg[1]) do
-        createdButtons[v]:hide(arg[2], arg[3])
+            createdButtons[v]:hide(arg[2], arg[3])
         end
     else
         createdButtons[arg[1]]:hide(arg[2], arg[3])
@@ -306,7 +306,7 @@ end
 function setButtonVisible(...)
     if type(arg[1]) == "table" then
         for _, v in pairs(arg[1]) do
-        createdButtons[v]:setVisible(arg[2])
+            createdButtons[v]:setVisible(arg[2])
         end
     else
         createdButtons[arg[1]]:setVisible(arg[2])
@@ -324,7 +324,7 @@ addEventHandler("onClientRender", root, renderButtons)
 function clickButtons(btn, state)
     if btn == "left" then
         for i, v in pairs(createdButtons) do
-        v:click(state)
+            v:click(state)
         end
     end
 end

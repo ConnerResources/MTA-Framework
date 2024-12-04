@@ -1,115 +1,3 @@
-# Switch
-This switch, when created, will be positioned on the client's screen, and when clicked, it will trigger an "on and off" animation. You can check and apply the on/off status, as well as other functions.
-
-### createSwitch
-Create a switch.
-``` lua
-element createSwitch ( float startX, float startY, float width, float height [, bool selected = false ] )
-```
-**Required Arguments**
-- **startX:** An float representing the absolute origin X position of the rectangle, represented by pixels on the screen.
-- **startY:** An float representing the absolute origin Y position of the rectangle, represented by pixels on the screen.
-- **width:** An float representing the width of the rectangle, drawn in a right direction from the origin.
-- **height:** An float representing the height of the rectangle, drawn in a downwards direction from the origin.
-
-**Optional Arguments**
-- **selected:** A boolean that indicates whether the switch will be created as selected (on).
-
-**Returns:**
-Returns the switch `element` if it was successfully created.
-
-**Client-side example**
-```lua
-local sx, sy = guiGetScreenSize()
-local zoom = 1
-local baseX = 1920
-local minZoom = 2
-if sx < baseX then
-    zoom = math.min(minZoom, baseX/sx)
-end
-
-function createSwitchOnCenterScreen()
-    local switch = exports.Framework:createSwitch((sx - 100/zoom)/2, (sy - 50/zoom)/2, 100/zoom, 50/zoom)
-end
-
-createSwitchOnCenterScreen()
-```
-
-### destroySwitch
-Destroys a switch.
-``` lua
-bool destroySwitch ( table/element switch )
-```
-**Required Arguments**
-- **switch:** Switch table or element you want to destroy.
-
-**Returns:**
-Returns `true` if the operation was successful, otherwise returns `false`.
-
-### showSwitch
-Show switch with pop-up animation.
-``` lua
-bool showSwitch ( table/element switch [, float actionTime = 500, string easing = "OutQuad" ] )
-```
-**Required Arguments**
-- **switch:** Table or switch element you want to show.
-
-**Optional Arguments**
-- **actionTime:** A number of milliseconds for the animation to complete.
-- **easing:** The [easing function](https://wiki.multitheftauto.com/wiki/Easing) to use for the interpolation.
-
-### hideSwitch
-Hide switch with fading animation.
-``` lua
-bool hideSwitch ( table/element switch [, float actionTime = 500, string easing = "OutQuad" ] )
-```
-**Required Arguments**
-- **switch:** Table or switch element you want to hide.
-
-**Optional Arguments**
-- **actionTime:** A number of milliseconds for the animation to complete.
-- **easing:** The [easing function](https://wiki.multitheftauto.com/wiki/Easing) to use for the interpolation.
-
-**Returns:**
-Returns `true` if the operation was successful, otherwise returns `false`.
-
-### setSwitchVisible
-Change switch display without animation.
-``` lua
-bool setSwitchVisible ( table/element switch, bool isVisible)
-```
-**Required Arguments**
-- **switch:** Table or switch element you want to destroy.
-- **isVisible:** A boolean indicating whether we want to show (true) or hide it (false).
-
-**Returns:**
-Returns `true` if the operation was successful, otherwise returns `false`.
-
-### isSwitchSelected
-Checks whether the switch is on or off.
-``` lua
-bool isSwitchSelected ( element switch )
-```
-**Required Arguments**
-- **switch:** Switch element you want to check the status of.
-
-**Returns:**
-Returns `true` if the switch is on, otherwise returns `false`.
-
-### setSwitchSelected
-Sets the switch to on or off status.
-``` lua
-bool setSwitchSelected ( element switch, bool selected )
-```
-**Required Arguments**
-- **switch:** Switch element you want to apply the status to.
-- **selected:** A boolean that indicates whether we want to turn it on (true) or off (false).
-
-**Returns:**
-Returns `true` if the operation was successful, otherwise returns `false`.
-
-
-
 # Button
 This button, when created, will be positioned on the customer's screen and when clicked, an animation will be executed on the "selected" button.
 
@@ -250,29 +138,45 @@ bool setButtonX ( table/element button, float startY)
 Returns `true` if the operation was successful, otherwise returns `false`.
 
 
-# Response
-This responsive function was created with the intention of blocking a player's actions while he waits for a response to an event, widely used for server/client communications.
+# Escape
+This function was created to check if the player is out of the game.
 
-### setResponseEnabled
-Apply whether you are waiting for any response or not.
+### setEscapeOpen
+Apply whether a player is out of the game or not.
 ``` lua
-bool setResponseEnabled ( bool response )
+bool setEscapeOpen ( bool opened )
 ```
 **Required Arguments**
-- **response:** A boolean indicating whether we want to leave it waiting for a response (true) or close it (false).
+- **opened:** A boolean indicating whether a player is out of the game (true) or not (false).
 
 **Returns:**
-Returns `true` if the response is being awaited, otherwise returns `false`.
+Returns `true` if the player is out of the game, otherwise returns `false`.
 
-### isResponseEnabled
-Check if you are waiting for a response.
+### isEscapeOpen
+Check if the player is out of the game.
 ``` lua
-bool isResponseEnabled ( )
+bool isEscapeOpen ( )
 ```
 **Returns:**
-Returns `true` if the response is being awaited, otherwise returns `false`.
+Returns `true` if the player is out of the game, otherwise returns `false`.
 
 
+# Font
+Creating fonts in an optimized way.
+
+### getFont
+Gets a source within the framework if already created, otherwise a new one will be created. This way, fonts created within the framework will never be repeated if they have the same size and the same family.
+``` lua
+element getFont ( float size [, string family = "Inter-Regular"] )
+```
+**Required Arguments**
+- **size:** A number indicating the font size.
+
+**Optional Arguments**
+- **family:** A string with the font family. Standard families: (Inter-Bold), (Inter-Medium), (Inter-Regular) and (Inter-SemiBold).
+
+**Returns:**
+Returns the `element` of the source if it was created successfully, otherwise it will return `false`.
 
 # Gui
 This function was made to identify if a GUI is open.
@@ -297,41 +201,254 @@ bool canOpenGUI ( )
 Returns `true` if a GUI is not open, otherwise returns `false`.
 
 
-# Escape
-This function was created to check if the player is out of the game.
+# Response
+This responsive function was created with the intention of blocking a player's actions while he waits for a response to an event, widely used for server/client communications.
 
-### setEscapeOpen
-Apply whether a player is out of the game or not.
+### setResponseEnabled
+Apply whether you are waiting for any response or not.
 ``` lua
-bool setEscapeOpen ( bool opened )
+bool setResponseEnabled ( bool response )
 ```
 **Required Arguments**
-- **opened:** A boolean indicating whether a player is out of the game (true) or not (false).
+- **response:** A boolean indicating whether we want to leave it waiting for a response (true) or close it (false).
 
 **Returns:**
-Returns `true` if the player is out of the game, otherwise returns `false`.
+Returns `true` if the response is being awaited, otherwise returns `false`.
 
-### isEscapeOpen
-Check if the player is out of the game.
+### isResponseEnabled
+Check if you are waiting for a response.
 ``` lua
-bool isEscapeOpen ( )
+bool isResponseEnabled ( )
 ```
 **Returns:**
-Returns `true` if the player is out of the game, otherwise returns `false`.
+Returns `true` if the response is being awaited, otherwise returns `false`.
 
-# Font
-Creating fonts in an optimized way.
 
-### getFont
-Gets a source within the framework if already created, otherwise a new one will be created. This way, fonts created within the framework will never be repeated if they have the same size and the same family.
+# Switch
+This switch, when created, will be positioned on the client's screen, and when clicked, it will trigger an "on and off" animation. You can check and apply the on/off status, as well as other functions.
+
+### createSwitch
+Create a switch.
 ``` lua
-element getFont ( float size [, string family = "Inter-Regular"] )
+element createSwitch ( float startX, float startY, float width, float height [, bool selected = false ] )
 ```
 **Required Arguments**
-- **size:** A number indicating the font size.
+- **startX:** An float representing the absolute origin X position of the rectangle, represented by pixels on the screen.
+- **startY:** An float representing the absolute origin Y position of the rectangle, represented by pixels on the screen.
+- **width:** An float representing the width of the rectangle, drawn in a right direction from the origin.
+- **height:** An float representing the height of the rectangle, drawn in a downwards direction from the origin.
 
 **Optional Arguments**
-- **family:** A string with the font family. Standard families: (Inter-Bold), (Inter-Medium), (Inter-Regular) and (Inter-SemiBold).
+- **selected:** A boolean that indicates whether the switch will be created as selected (on).
 
 **Returns:**
-Returns the `element` of the source if it was created successfully, otherwise it will return `false`.
+Returns the switch `element` if it was successfully created.
+
+**Client-side example**
+```lua
+local sx, sy = guiGetScreenSize()
+local zoom = 1
+local baseX = 1920
+local minZoom = 2
+if sx < baseX then
+    zoom = math.min(minZoom, baseX/sx)
+end
+
+function createSwitchOnCenterScreen()
+    local switch = exports.Framework:createSwitch((sx - 100/zoom)/2, (sy - 50/zoom)/2, 100/zoom, 50/zoom)
+end
+
+createSwitchOnCenterScreen()
+```
+
+### destroySwitch
+Destroys a switch.
+``` lua
+bool destroySwitch ( table/element switch )
+```
+**Required Arguments**
+- **switch:** Switch table or element you want to destroy.
+
+**Returns:**
+Returns `true` if the operation was successful, otherwise returns `false`.
+
+### showSwitch
+Show switch with pop-up animation.
+``` lua
+bool showSwitch ( table/element switch [, float actionTime = 500, string easing = "OutQuad" ] )
+```
+**Required Arguments**
+- **switch:** Table or switch element you want to show.
+
+**Optional Arguments**
+- **actionTime:** A number of milliseconds for the animation to complete.
+- **easing:** The [easing function](https://wiki.multitheftauto.com/wiki/Easing) to use for the interpolation.
+
+### hideSwitch
+Hide switch with fading animation.
+``` lua
+bool hideSwitch ( table/element switch [, float actionTime = 500, string easing = "OutQuad" ] )
+```
+**Required Arguments**
+- **switch:** Table or switch element you want to hide.
+
+**Optional Arguments**
+- **actionTime:** A number of milliseconds for the animation to complete.
+- **easing:** The [easing function](https://wiki.multitheftauto.com/wiki/Easing) to use for the interpolation.
+
+**Returns:**
+Returns `true` if the operation was successful, otherwise returns `false`.
+
+### setSwitchVisible
+Change switch display without animation.
+``` lua
+bool setSwitchVisible ( table/element switch, bool isVisible)
+```
+**Required Arguments**
+- **switch:** Table or switch element you want to destroy.
+- **isVisible:** A boolean indicating whether we want to show (true) or hide it (false).
+
+**Returns:**
+Returns `true` if the operation was successful, otherwise returns `false`.
+
+### isSwitchSelected
+Checks whether the switch is on or off.
+``` lua
+bool isSwitchSelected ( element switch )
+```
+**Required Arguments**
+- **switch:** Switch element you want to check the status of.
+
+**Returns:**
+Returns `true` if the switch is on, otherwise returns `false`.
+
+### setSwitchSelected
+Sets the switch to on or off status.
+``` lua
+bool setSwitchSelected ( table/element switch, bool selected )
+```
+**Required Arguments**
+- **switch:** Table of elements or individual element of the switch that you want to change the value.
+- **selected:** A boolean that indicates whether we want to turn it on (true) or off (false).
+
+**Returns:**
+Returns `true` if the operation was successful, otherwise returns `false`.
+
+
+# Slide
+This function creates a slider bar that moves with mouse movement.
+
+### createSlide
+Create a slide.
+``` lua
+element createSlide ( float startX, float startY, float width, float height, float circleWidth, float circleHeight [, float minValue = 1, float maxValue = 100, float barRadius = 5, table colorBg = {255, 255, 255, 255}, table barColor = {0, 0, 0, 255}, table circleColor = {0, 0, 0, 255}, bool showedInfo = false ] )
+```
+**Required Arguments**
+- **startX:** An float representing the absolute origin X position of the rectangle, represented by pixels on the screen.
+- **startY:** An float representing the absolute origin Y position of the rectangle, represented by pixels on the screen.
+- **width:** An float representing the width of the rectangle, drawn in a right direction from the origin.
+- **height:** An float representing the height of the rectangle, drawn in a downwards direction from the origin.
+- **circleWidth:** An float representing the width of the circle, drawn in a right direction from the origin.
+- **circleHeight:** An float representing the height of the circle, drawn in a downwards direction from the origin.
+
+**Optional Arguments**
+- **minValue**: A float representing the minimum value of the slide.
+- **maxValue**: A float representing the maximum value of the slide.
+- **barRadius**: A float representing the background of the progress bar border.
+- **colorBg**: A table with the colors and alpha in (R, G, B, A) at the bottom of the progression bar.
+- **barColor**: A table with the colors and alpha in (R, G, B, A) of the progression bar.
+- **circleColor**: A table with the colors and alpha in (R, G, B, A) of the progression bar circle.
+- **showedInfo**: A boolean representing whether to show the slide progression text.
+
+**Returns:**
+Returns the slide `element` if it was successfully created.
+
+**Client-side example**
+```lua
+local sx, sy = guiGetScreenSize()
+local zoom = 1
+local baseX = 1920
+local minZoom = 2
+if sx < baseX then
+    zoom = math.min(minZoom, baseX/sx)
+end
+
+function createSlideOnCenterScreen()
+    local slide = exports.Framework:createSlide((sx - 100/zoom)/2, (sy - 50/zoom)/2, 116/zoom, 5/zoom, 13/zoom, 13/zoom, 0, 100, 0, {80, 81, 91, 255}, {173, 205, 69, 255}, {255, 255, 255, 255})
+end
+
+createSlideOnCenterScreen()
+```
+
+### destroySlide
+Destroys a slide.
+``` lua
+bool destroySlide ( table/element slide )
+```
+**Required Arguments**
+- **slide:** Slide table or element you want to destroy.
+
+**Returns:**
+Returns `true` if the operation was successful, otherwise returns `false`.
+
+### showSlide
+Show slide with pop-up animation.
+``` lua
+bool showSlide ( table/element slide [, float actionTime = 500, string easing = "OutQuad" ] )
+```
+**Required Arguments**
+- **slide:** Table or slide element you want to show.
+
+**Optional Arguments**
+- **actionTime:** A number of milliseconds for the animation to complete.
+- **easing:** The [easing function](https://wiki.multitheftauto.com/wiki/Easing) to use for the interpolation.
+
+### hideSlide
+Hide slide with fading animation.
+``` lua
+bool hideSlide ( table/element slide [, float actionTime = 500, string easing = "OutQuad" ] )
+```
+**Required Arguments**
+- **slide:** Table or slide element you want to slide.
+
+**Optional Arguments**
+- **actionTime:** A number of milliseconds for the animation to complete.
+- **easing:** The [easing function](https://wiki.multitheftauto.com/wiki/Easing) to use for the interpolation.
+
+**Returns:**
+Returns `true` if the operation was successful, otherwise returns `false`.
+
+### setSlideVisible
+Change slide display without animation.
+``` lua
+bool setSlideVisible ( table/element slide, bool isVisible)
+```
+**Required Arguments**
+- **slide:** Table or slide element you want to destroy.
+- **isVisible:** A boolean indicating whether we want to show (true) or hide it (false).
+
+**Returns:**
+Returns `true` if the operation was successful, otherwise returns `false`.
+
+### getSlideValue
+Get value from a slide.
+``` lua
+bool getSlideValue ( element slide )
+```
+**Required Arguments**
+- **slide:** Slide element you want to check the status of.
+
+**Returns:**
+Returns the `float` value of the slide.
+
+### setSlideValue
+Set the slide value.
+``` lua
+bool setSlideValue ( table/element slide, float value )
+```
+**Required Arguments**
+- **slide:** Table of elements or individual slide element that you want to change the value..
+- **value:** The value that also indicates the position of the slide.
+
+**Returns:**
+Returns `true` if the operation was successful, otherwise returns `false`.

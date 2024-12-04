@@ -9,9 +9,10 @@ This framework was created to facilitate the creation of interfaces within Multi
 
 ## Elements
 Below are the framework elements and syntaxes. New elements will be available soon:
-- [Switch](elements/readme.md#switch)
 - [Button](elements/readme.md#button)
-- [Response](elements/readme.md#response)
-- [Gui state](elements/readme.md#gui)
 - [Escape](elements/readme.md#escape)
 - [Font](elements/readme.md#font)
+- [Gui state](elements/readme.md#gui)
+- [Response](elements/readme.md#response)
+- [Switch](elements/readme.md#switch)
+- [Slide](elements/readme.md#slide)

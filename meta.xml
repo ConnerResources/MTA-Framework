@@ -4,9 +4,10 @@
 
 	<script src="c.lua" type="client" cache="false"/>
 
-	<script src="elements/switch.lua" type="client" cache="false"/>
 	<script src="elements/button.lua" type="client" cache="false"/>
 	<script src="elements/response.lua" type="client" cache="false"/>
+	<script src="elements/switch.lua" type="client" cache="false"/>
+	<script src="elements/slide.lua" type="client" cache="false"/>
 
 	<file src="files/fonts/Inter-Bold.ttf" type="client"/>
 	<file src="files/fonts/Inter-SemiBold.ttf" type="client"/>
