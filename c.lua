@@ -62,7 +62,7 @@ function getFont(size, family)
 end
 
 function createFont(size, family)
-    if not family then return false end
+    if not size then return false end
     guiData.fonts[string.format("size_%s_%d", family and family or "Inter-Regular", size)] = dxCreateFont(string.format("files/fonts/%s.ttf", family and family or "Inter-Regular"), size, false)
     return guiData.fonts[string.format("size_%s_%d", family and family or "Inter-Regular", size)]
 end
