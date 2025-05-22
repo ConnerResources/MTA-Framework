@@ -18,6 +18,16 @@
 
 	<export function="getFont" type="client" />
 
+	<export function="createSlide" type="client" />
+	<export function="destroySlide" type="client" />
+	<export function="showSlide" type="client" />
+	<export function="hideSlide" type="client" />
+	<export function="setSlideVisible" type="client" />
+	<export function="setSlideX" type="client" />
+	<export function="setSlideY" type="client" />
+	<export function="getSlideValue" type="client" />
+	<export function="setSlideValue" type="client" />
+
 	<export function="createSwitch" type="client" />
 	<export function="destroySwitch" type="client" />
 	<export function="showSwitch" type="client" />
