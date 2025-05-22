@@ -2,6 +2,8 @@ addEvent("guiSlideClick", true)
 
 createdSlides = {}
 
+local clicked = false
+
 Slide = {}
 Slide.__index = Slide
 
@@ -28,9 +30,9 @@ function Slide:constructor(...)
     self.minValue = arg[7] or 1
     self.maxValue = arg[8] or 100
     self.radius = arg[9] or 5
-    self.colorBg = arg[10] or {255, 255, 255, 255}
-    self.barColor = arg[11] or {0, 0, 0, 255}
-    self.circleColor = arg[12] or {0, 0, 0, 255}
+    self.colorBg = arg[10] or {0, 0, 0, 255}
+    self.barColor = arg[11] or {80, 80, 80, 255}
+    self.circleColor = arg[12] or {255, 255, 255, 255}
     self.showedInfo = arg[13] or false
 
     local bar = string.format([[
@@ -83,7 +85,7 @@ function Slide:draw()
     local interpolateBar = interpolateBetween(self.old, 0, 0, self.value, 0, 0, (getTickCount() - self.tick)/300, "OutQuad")
     dxDrawImage(self.x, self.y, self.w, self.h, self.bar, 0, 0, 0, tocolor(self.colorBg[1], self.colorBg[2], self.colorBg[3], self.colorBg[4] * self.alpha), true)
     dxDrawImage(self.x, self.y, self.progress, self.h, self.bar, 0, 0, 0, tocolor(self.barColor[1], self.barColor[2], self.barColor[3], self.barColor[4] * self.alpha), true)
-    dxDrawImage(self.x + self.progress - (self.cw/2), self.y - self.h + 1/zoom, self.cw, self.ch, self.circle, 0, 0, 0, tocolor(self.circleColor[1], self.circleColor[2], self.circleColor[3], self.circleColor[4] * self.alpha), true)
+    dxDrawImage(self.x + self.progress - (self.cw/2), self.y + (self.h - self.ch)/2, self.cw, self.ch, self.circle, 0, 0, 0, tocolor(self.circleColor[1], self.circleColor[2], self.circleColor[3], self.circleColor[4] * self.alpha), true)
     if self.showedInfo then
         if not self.clicked then return end
         dxDrawImage(self.x + interpolateBar - self.cw/2 - 6/zoom, self.y - self.h - 25/zoom, self.cw + 12/zoom, self.ch, self.info, 0, 0, 0, tocolor(255, 255, 255, 255 * self.alpha), true)
@@ -116,20 +118,25 @@ function Slide:showingDraw()
       self.clickable = true
     end
 end
-
   
 function Slide:click(state)
     if not self.visible then return end
     if not self.clickable then return end
     if state == "down" then
-        if isMouseInPosition(self.x, self.y, self.w, self.h) then
+        if isMouseInPosition(self.x - self.ch, self.y - self.ch/2, self.w + (self.ch + self.ch), self.ch + self.ch) then
+            if clicked then return end
             self.clicked = true
+            clicked = true
             self.old = self.value
             self.tick = getTickCount()
-            triggerEvent("guiSlideClick", root, self.element)
+            triggerEvent("guiSlideClick", root, self.element, "down")
         end
     else
+        if self.clicked then
+            triggerEvent("guiSlideClick", root, self.element, "up")
+        end
         self.clicked = false
+        clicked = false
     end
 end
 
@@ -142,6 +149,7 @@ end
 
 function Slide:setVisible(...)
     self.visible = arg[1]
+    return true
 end
 
 function Slide:getValue()
@@ -157,10 +165,12 @@ end
 
 function Slide:setX(...)
     self.x = arg[1]
+    return true
 end
 
 function Slide:setY(...)
     self.y = arg[1]
+    return true
 end
 
 function Slide:hide(...)
@@ -185,6 +195,7 @@ end
 
 function Slide:setOwner(...)
     self.owner = arg[1]
+    return true
 end
   
 function Slide:getOwner()
@@ -194,7 +205,7 @@ end
 function createSlide(...)
     slide = Slide:create(...)
     slide:setOwner(getResourceName(sourceResource))
-    return slide.id
+    return slide.element
 end
 
 function showSlide(...)
@@ -260,7 +271,7 @@ end
 function setSlideX(...)
     if type(arg[1]) == "table" then
         for _, v in pairs(arg[1]) do
-            createdSlides[v]:setX(arg[2])
+            createdSlides[v[1]]:setX(v[2])
         end
     else
         createdSlides[arg[1]]:setX(arg[2])
